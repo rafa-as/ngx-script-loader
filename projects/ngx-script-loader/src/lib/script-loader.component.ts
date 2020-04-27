@@ -3,7 +3,7 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@ang
 import { ScriptLoaderService } from './script-loader.service';
 
 @Component({
-  selector: 'ngx-script-loader',
+  selector: 'ngx-script',
   template: ''
 })
 export class ScriptLoaderComponent implements OnInit {
