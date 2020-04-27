@@ -16,7 +16,7 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../../coverage/ngx-script-loader'),
+      dir: require('path').join(__dirname, '../../coverage/ngx-script-loader-demo'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
@@ -25,16 +25,8 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeCI'],
+    browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true,
-    customLaunchers: {
-      ChromeCI: {
-        base: 'ChromeHeadless',
-        // We must disable the Chrome sandbox when running Chrome inside Docker (Chrome's sandbox needs
-        // more permissions than Docker allows by default)
-        flags: ['--no-sandbox']
-      }
-    }
+    restartOnFileChange: true
   });
 };

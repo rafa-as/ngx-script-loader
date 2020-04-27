@@ -2,28 +2,28 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "importHelpers": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
     "lib": [
-      "es2017",
+      "es2018",
       "dom"
     ],
     "paths": {
       "ngx-script-loader": [
-        "projects/ngx-script-loader/src/public_api"
-      ],
-      "ngx-script-loader/*": [
-        "projects/ngx-script-loader/src/lib/*"
+        "dist/ngx-script-loader/ngx-script-loader",
+        "dist/ngx-script-loader"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }
