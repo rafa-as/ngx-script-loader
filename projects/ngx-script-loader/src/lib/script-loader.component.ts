@@ -3,7 +3,7 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@ang
 import { ScriptLoaderService } from './script-loader.service';
 
 @Component({
-  selector: 'ngx-script',
+  selector: 'ngx-script-loader',
   template: ''
 })
 export class ScriptLoaderComponent implements OnInit {
@@ -18,11 +18,11 @@ export class ScriptLoaderComponent implements OnInit {
 
   @Output() error = new EventEmitter<Event>();
 
-  constructor(private scriptService: ScriptLoaderService, private element: ElementRef) {
+  constructor(private scriptLoaderService: ScriptLoaderService, private element: ElementRef) {
   }
 
   ngOnInit() {
-    this.scriptService.loadScript(this.src, this.attributes, this.element.nativeElement)
+    this.scriptLoaderService.loadScript(this.src, this.attributes, this.element.nativeElement)
       .subscribe((event) => {
         this.load.emit(event);
       }, (error) => {

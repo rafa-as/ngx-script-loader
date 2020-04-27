@@ -3,11 +3,11 @@
 <button (click)="showWidget=false;runScript()">(Load and) Run external script</button>
 
 <div #secondMenu *ngIf="showWidget">
-  <ngx-script
+  <ngx-script-loader
     [attributes]="spWidgetAttributes"
     (error)="widgetLoadFailed($event)"
     (load)="widgetLoaded($event)"
-    src="https://menus.singleplatform.com/widget"></ngx-script>
+    src="https://menus.singleplatform.com/widget"></ngx-script-loader>
 </div>
 
 <div #menuContainer>
